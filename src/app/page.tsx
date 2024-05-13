@@ -1,113 +1,126 @@
-import Image from "next/image";
+/* eslint-disable jsx-a11y/alt-text */
 
-export default function Home() {
+import Link from "next/link";
+
+/* eslint-disable @next/next/no-img-element */
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <section className="w-full h-full flex-col || md:justify-center md:flex md:flex-row md:gap-5  md:w-full md:items-center lg:flex lg:flex-row lg:gap-5  ">
+      <div className=" transition-transform hover:scale-95 w-auto h-auto bg-neutral-100 rounded-[40px] shadow  justify-center items-center inline-flex">
+        <div className="relative">
+          <img
+            className="w-auto h-auto rounded-[40px] ease-in-out"
+            src="image 1.png"
+          />
+
+          <div className="overlay  justify-center  absolute top-0 left-0 w-full h-full flex items-end text-xl font-bold opacity-0 transition-opacity duration-300 hover:opacity-100">
+            <div className="w-full rounded-b-[40px]  h-auto  relative bg-white bg-opacity-70 || md:h-1/3">
+              <div className="flex flex-row gap-4 p-3 ">
+                <div className=" basis-1/2 justify-items-start text-zinc-700 text-3xl font-normal font-['Questrial', 'sans-serif'] uppercase">
+                  Grecja
+                </div>
+                <div className=" basis-1/2  justify-items-end text-[15px] text-zinc-700  font-normal font-['Questrial', 'sans-serif']">
+                  <h1 className="flex pt-1  items-center">
+                    29.06 - 07.06.2024
+                  </h1>
+                </div>
+              </div>
+              <div className=" flex flex-col gap-3 w-full h-auto p-3">
+                <div className=" flex justify-start items-center ">
+                  <div className=" text-black text-[20px] font-normal font-['Questrial', 'sans-serif']">
+                    <h1>Wycieczka objazdowa po pięknej Grecji</h1>
+                  </div>
+                </div>
+                <div className="flex justify-end">
+                  <div className="flex  w-[200px] h-[50px]   bg-orange-400 rounded-[20px] shadow justify-center items-center ">
+                    <div className="text-center text-white text-[40px] font-normal font-['Questrial', 'sans-serif']">
+                      <h1>3940 zł</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex flex-col gap-5 ">
+        <div className=" transition-transform hover:scale-95  w-full h-auto rounded-[40px] shadow flex-col justify-start items-start gap-2.5 inline-flex">
+          <div className="relative">
+            <img
+              className="w-auto h-auto ease-in-out rounded-[40px]"
+              src="image_2.png"
+            />
+            <div className="overlay  justify-center  absolute top-0 left-0 w-full h-full flex items-end text-xl font-bold opacity-0 transition-opacity duration-300 hover:opacity-100">
+              <div className="w-full h-3/4  relative rounded-b-[40px] bg-white bg-opacity-70">
+                <div className="flex flex-row gap-4 p-3 ">
+                  <div className=" basis-1/2 justify-items-start text-zinc-700 text-3xl font-normal font-['Questrial', 'sans-serif'] uppercase">
+                    Turcja
+                  </div>
+                  <div className=" basis-1/2  justify-items-end text-[15px] text-zinc-700  font-normal font-['Questrial', 'sans-serif']">
+                    <h1 className="flex pt-1  items-center">
+                      29.06 - 07.06.2024
+                    </h1>
+                  </div>
+                </div>
+                <div className=" flex flex-row  w-full h-auto px-3">
+                  <div className=" flex justify-start items-center ">
+                    <div className=" text-black text-[15px] font-normal font-['Questrial', 'sans-serif']">
+                      <h1>Wycieczka objazdowa po pięknej Grecji</h1>
+                    </div>
+                  </div>
+                  <div className="flex justify-end">
+                    <div className="flex  w-[130px] h-[40px]   bg-orange-400 rounded-[20px] shadow justify-center items-center ">
+                      <div className="text-center text-white text-[30px] font-normal font-['Questrial', 'sans-serif']">
+                        <h1>3940 zł</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className=" w-full h-full flex flex-row gap-2">
+          <div className=" transition-transform hover:scale-95 w-full h-full basis-1/2  rounded-[40px] flex-col justify-start items-center  inline-flex">
+            <div className="relative ">
+              <img
+                className=" w-full h-full rounded-[40px]  transition duration-500 ease-in-out"
+                src="image_3.png"
+              />
+
+              <div className="overlay absolute top-0 left-0 w-full h-full flex items-end text-xl font-bold opacity-0 transition-opacity duration-300 hover:opacity-100">
+                <div className="w-full h-3/4 bg-white rounded-b-[40px] bg-opacity-70 flex-col justify-start items-center  ">
+                  <div className="flex p-3 flex-col gap-3 items-center justify-center">
+                    <div className=" basis-1/3  text-zinc-700 text-[25px] font-normal ">
+                      Meksyk
+                    </div>
+                    <div className="basis-1/3  text-zinc-700 text-[15px] font-normal ">
+                      29.06 - 07.06.2024
+                    </div>
+                    <div className="flex h-11   w-3/4  bg-orange-400 rounded-[20px] shadow flex-col items-center justify-center">
+                      <div className=" text-center text-white text-[25px] font-normal ">
+                        3940 zł
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Link
+            className="hover:scale-95 transition-transform w-auto h-auto basis-1/2  bg-neutral-100 rounded-[40px] shadow border border-blue-800  justify-center items-center flex"
+            href="/wycieczki"
+          >
+            <div className=" flex-col flex gap-2">
+              <h1 className=" text-zinc-700 gap-5   font-normal font-['Questrial', 'sans-serif']    text-[14px] ">
+                Wyświetl więcej
+              </h1>
+              <img className="px-5" src="arrow.svg" />
+            </div>
+          </Link>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </section>
   );
 }

@@ -3,7 +3,10 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Link from "next/link";
-import PhotoOverlay, { PhotoOverlay2 } from "@/app/ui/PhotoOverlay";
+import PhotoOverlay, {
+  PhotoOverlay2,
+  PhotoOverlay3,
+} from "@/app/ui/PhotoOverlay";
 
 export default function HomePage() {
   return (
@@ -37,7 +40,7 @@ export default function HomePage() {
         <div className=" w-full h-full flex flex-row gap-2">
           <div className=" transition-transform hover:scale-95 w-full h-full basis-1/2  rounded-[40px] flex-col justify-start items-center  inline-flex">
             <div className="relative ">
-              <PhotoOverlay
+              <PhotoOverlay3
                 imageUrl={"/image_3.png"}
                 name={"Meksyk"}
                 price={2123}

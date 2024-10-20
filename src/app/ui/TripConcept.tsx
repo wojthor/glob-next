@@ -85,7 +85,7 @@ export default function Component(wycieczka: Trip) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <div className="flex items-center bg-emerald-500 rounded-full px-6 py-3 shadow-lg">
+            <div className="flex items-center bg-emerald-500 rounded-full px-3 py-3 shadow-lg">
               <span className="text-2xl md:text-3xl font-bold text-white">
                 {wycieczka.price} zł/os
               </span>
@@ -101,7 +101,7 @@ export default function Component(wycieczka: Trip) {
                     onClick={() => setShow(true)}
                     className="relative items-end transition-transform hover:scale-95 "
                   >
-                    <div className="flex items-center gap-2 bg-[#1c59ac] rounded-full px-6 py-3 shadow-lg">
+                    <div className="flex items-center gap-2 bg-[#1c59ac] rounded-full px-3 py-3 shadow-lg">
                       <span className="text-2xl md:text-xl font-bold text-white">
                         ZAPISZ SIĘ
                       </span>

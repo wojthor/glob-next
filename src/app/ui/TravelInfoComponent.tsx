@@ -5,12 +5,14 @@ import React from "react";
 
 type InfoComponentProps = {
   description?: string;
-  services?: string[];
+  services: string;
+  extras: string;
 };
 
 export default function TravelInfoComponent({
   description,
   services,
+  extras,
 }: InfoComponentProps) {
   return (
     <div className="w-full max-w-4xl mx-auto bg-white shadow-lg rounded-2xl overflow-hidden">
@@ -33,22 +35,9 @@ export default function TravelInfoComponent({
             Świadczenia w cenie
           </h2>
 
-          <ul className="list-disc list-inside space-y-3">
-            {services?.length ? (
-              services.map((service, index) => (
-                <li key={index} className="text-gray-700">
-                  {service}
-                </li>
-              ))
-            ) : (
-              <p className="text-gray-500 italic">Brak dostępnych świadczeń.</p>
-            )}
-          </ul>
+          <ul className="list-disc list-inside space-y-3">{services}</ul>
 
-          <p className="mt-4 font-bold text-blue-600">
-            Dla chętnych za dopłatą 180 zł transfer w 2 strony autokarem z
-            miejscowości: Opole, Katowice, Rzeszów, Łańcut.
-          </p>
+          <p className="mt-4 font-bold text-blue-600">{extras}</p>
         </div>
       </div>
     </div>

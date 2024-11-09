@@ -5,15 +5,16 @@ import { X, User, Mail, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-import trips from "@/app/trips";
+import { type Trip2 } from "@/app/api/api";
 
 export default function ContactModal({
   show,
   setShow,
+  wycieczka,
 }: {
   show: boolean;
   setShow: (show: boolean) => void;
+  wycieczka: Trip2;
 }) {
   const params = useParams();
   const tripID = Array.isArray(params.tripID)
@@ -21,10 +22,6 @@ export default function ContactModal({
     : params.tripID;
   console.log("Params:", tripID);
 
-  const wycieczka = trips.find((trip) => trip.id === parseInt(tripID));
-  if (!wycieczka) {
-    return <div>Wycieczka nie została znaleziona</div>;
-  }
   return (
     <AnimatePresence>
       {show && (
@@ -58,7 +55,7 @@ export default function ContactModal({
             <div className="p-6 space-y-6 bg-gray-50">
               <div className="text-center">
                 <h3 className="text-xl font-semibold text-gray-700">
-                  {wycieczka.name}
+                  {wycieczka.data.trips[0].tripName}
                 </h3>
               </div>
 

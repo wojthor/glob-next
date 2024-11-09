@@ -6,11 +6,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, Calendar, MapPin } from "lucide-react";
-import { type Trip } from "@/app/trips";
+
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/app/ui/Modal";
+import { type Trip2 } from "@/app/api/api";
 
-export default function Component(wycieczka: Trip) {
+export default function Component(wycieczka: Trip2) {
   const [isHovered, setIsHovered] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -27,7 +28,7 @@ export default function Component(wycieczka: Trip) {
         className="absolute inset-0"
       >
         <Image
-          src={wycieczka.image}
+          src={wycieczka.data.trips[0].image.url}
           alt="Tropical beach paradise"
           fill={true} // replaces layout="fill"
           style={{ objectFit: "cover" }} // replaces objectFit="cover"
@@ -43,7 +44,7 @@ export default function Component(wycieczka: Trip) {
           className="absolute top-4 left-4 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/30 z-10"
           aria-label="Go back"
         >
-          <ArrowLeft className="w-6 h-6 text-white" />
+          <ArrowLeft className="w-12 h-6 text-white" />
         </Button>
       </Link>
 
@@ -60,7 +61,7 @@ export default function Component(wycieczka: Trip) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {wycieczka.name}
+            {wycieczka.data.trips[0].tripName}
           </motion.h1>
 
           <motion.div
@@ -86,8 +87,8 @@ export default function Component(wycieczka: Trip) {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <div className="flex items-center bg-emerald-500 rounded-full px-3 py-3 shadow-lg">
-              <span className="text-2xl md:text-3xl font-bold text-white">
-                {wycieczka.price} zł/os
+              <span className="text-xl md:text-3xl font-bold text-white">
+                {wycieczka.data.trips[0].price} zł/os
               </span>
             </div>
             <AnimatePresence>
@@ -102,7 +103,7 @@ export default function Component(wycieczka: Trip) {
                     className="relative items-end transition-transform hover:scale-95 "
                   >
                     <div className="flex items-center gap-2 bg-[#1c59ac] rounded-full px-3 py-3 shadow-lg">
-                      <span className="text-2xl md:text-xl font-bold text-white">
+                      <span className="text-xl md:text-xl font-bold text-white">
                         ZAPISZ SIĘ
                       </span>
                       <img
@@ -120,7 +121,7 @@ export default function Component(wycieczka: Trip) {
       </motion.div>
       {show && (
         <div className="fixed p-2 inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <ContactForm show={show} setShow={setShow} />
+          <ContactForm wycieczka={wycieczka} show={show} setShow={setShow} />
         </div>
       )}
     </div>

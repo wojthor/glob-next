@@ -267,7 +267,7 @@ export function PhotoOverlay3({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="absolute md:inset-x-0 md:bottom-0 md:p-6 p-6">
+              <div className="absolute md:inset-x-0 md:bottom-0 md:p-6 p-5">
                 <motion.h3
                   className="text-3xl font-bold mb-2 font-['Montserrat', sans-serif]"
                   initial={{ y: 20, opacity: 0 }}

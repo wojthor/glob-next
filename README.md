@@ -37,3 +37,42 @@ Ensure you have the following installed:
    git clone https://github.com/wojthor/glob-next.git
    cd glob-next
    ```
+
+### Running the Project
+To start the development server:
+
+npm run dev
+Open http://localhost:3000 to view it in the browser.
+
+
+### Scripts
+dev: Runs the development server.
+build: Builds the application for production.
+start: Starts the production server.
+lint: Lints the codebase using ESLint.
+
+### Dependencies
+@radix-ui/react-icons
+@radix-ui/react-label
+@radix-ui/react-slot
+class-variance-authority
+clsx
+framer-motion
+lucide-react
+next
+react
+react-dom
+tailwind-merge
+tailwindcss-animate
+
+### Language Composition
+TypeScript: 95.9%
+CSS: 3.5%
+JavaScript: 0.6%
+
+
+### License
+This project is licensed under the MIT License.
+
+
+You can edit your README file [here](https://github.com/wojthor/glob-next/edit/master/README.md).

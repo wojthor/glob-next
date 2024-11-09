@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Glob Next
+A modern TypeScript project using Next.js and Tailwind CSS.
 
-## Getting Started
+Table of Contents
+Introduction
+Features
+Getting Started
+Prerequisites
+Installation
+Running the Project
+Scripts
+Dependencies
+Language Composition
+License
+Introduction
+Glob Next is a modern web development project built with TypeScript, Next.js, and Tailwind CSS. It leverages the power of Radix UI, Framer Motion, and other popular libraries to provide a rich and interactive user experience.
 
-First, run the development server:
+Features
+TypeScript: Strongly typed JavaScript for better code quality and maintainability.
+Next.js: A React framework for server-side rendering and static site generation.
+Tailwind CSS: A utility-first CSS framework for rapid UI development.
+Radix UI: Accessible, unstyled components for building high-quality design systems.
+Framer Motion: A production-ready motion library for React.
+Getting Started
+Prerequisites
+Ensure you have the following installed:
 
-```bash
+Node.js
+npm (or yarn)
+Installation
+Clone the repository:
+git clone https://github.com/wojthor/glob-next.git
+cd glob-next
+Install dependencies:
+npm install
+Running the Project
+To start the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 to view it in the browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Scripts
+dev: Runs the development server.
+build: Builds the application for production.
+start: Starts the production server.
+lint: Lints the codebase using ESLint.
+Dependencies
+@radix-ui/react-icons
+@radix-ui/react-label
+@radix-ui/react-slot
+class-variance-authority
+clsx
+framer-motion
+lucide-react
+next
+react
+react-dom
+tailwind-merge
+tailwindcss-animate
+Language Composition
+TypeScript: 95.9%
+CSS: 3.5%
+JavaScript: 0.6%
+License
+This project is licensed under the MIT License.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to customize further as needed.

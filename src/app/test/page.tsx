@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { HamburgerMenu } from "@/app/ui/HamburgerMenu";
+import { type Trip2, getTripByCategory } from "@/app/api/api";
 
 /*
 const grapqgl = process.env.NEXT_HYGRAPH_ENDPOINT;
@@ -80,10 +80,20 @@ export default function Page() {
   );
 } */
 
-export default function Test() {
+export default async function Test() {
+  const content: Trip2 = await getTripByCategory("dlaZakladowPracy");
+  const trip = content.data.trips[1];
   return (
     <div>
-      <HamburgerMenu />
+      <img className="w-1/2 h-auto" src={trip.image.url} alt={trip.tripName} />
+      <h2>{trip.tripName}</h2>
+      <p>{trip.description}</p>
+      <p>
+        {trip.startDate} - {trip.endDate}
+      </p>
+      <p>{trip.price}$</p>
+      <p>{trip.services}</p>
+      <p>{trip.extras}</p>
     </div>
   );
 }

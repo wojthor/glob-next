@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
@@ -28,7 +29,7 @@ export default function PhotoOverlay({
   return (
     <div className="text-black">
       <motion.div
-        className="relative w-full rounded-[30px] border-blue-800 border-opacity-10 border-[1px] overflow-hidden"
+        className="relative   w-[349px] h-[387px] md:w-[590px] md:h-[655px] rounded-[30px] border-blue-800 border-opacity-10 border-[1px] overflow-hidden"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
         onClick={handleHoverToggle} // Add onClick for mobile
@@ -135,7 +136,7 @@ export function PhotoOverlay2({
   return (
     <div className="text-black">
       <motion.div
-        className="relative h-auto w-full rounded-[30px] border-blue-800 border-opacity-10 border-[1px] overflow-hidden"
+        className="relative md:w-[590px] md:h-[315px] w-[349px] h-[188px] rounded-[30px] border-blue-800 border-opacity-10 border-[1px] overflow-hidden"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
         onClick={handleHoverToggle} // Add onClick for mobile
@@ -242,7 +243,7 @@ export function PhotoOverlay3({
   return (
     <div className="text-black">
       <motion.div
-        className="relative h-auto w-full rounded-[30px] border-blue-800 border-opacity-10 border-[1px] overflow-hidden"
+        className="relative md:w-[280px] md:h-[315px] w-[170px] h-[191px] rounded-[30px] border-blue-800 border-opacity-10 border-[1px] overflow-hidden"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
         onClick={handleHoverToggle} // Add onClick for mobile

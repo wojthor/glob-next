@@ -11,9 +11,29 @@ import { Button } from "@/components/ui/button";
 import ContactForm from "@/app/ui/Modal";
 import { type Trip2 } from "@/app/api/api";
 
+function calculateDaysAndNights(start: string, end: string): string {
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+
+  const timeDifference = endDate.getTime() - startDate.getTime();
+  const totalDays = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+  if (totalDays <= 0) {
+    return "0 dni, 0 nocy";
+  }
+
+  const nights = totalDays - 1;
+  return `${totalDays} dni, ${nights} ${nights === 1 ? "noc" : "noce"}`;
+}
+
 export default function Component(wycieczka: Trip2) {
   const [isHovered, setIsHovered] = useState(false);
   const [show, setShow] = useState(false);
+
+  const dateRange = calculateDaysAndNights(
+    wycieczka.data.trips[0].startDate,
+    wycieczka.data.trips[0].endDate
+  );
 
   return (
     <div
@@ -30,14 +50,13 @@ export default function Component(wycieczka: Trip2) {
         <Image
           src={wycieczka.data.trips[0].image.url}
           alt="Tropical beach paradise"
-          fill={true} // replaces layout="fill"
-          style={{ objectFit: "cover" }} // replaces objectFit="cover"
+          fill={true}
+          style={{ objectFit: "cover" }}
           priority
         />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
-      <Link href="/wycieczki" className="absolute top-4 left-4 p-2 m-2">
-        {" "}
+      <Link href="/oferta" className="absolute top-4 left-4 p-2 m-2">
         <Button
           variant="ghost"
           size="icon"
@@ -72,11 +91,13 @@ export default function Component(wycieczka: Trip2) {
           >
             <div className="flex items-center bg-white/20 backdrop-blur-md rounded-full px-4 py-2">
               <Calendar className="w-5 h-5 text-white mr-2" />
-              <span className="text-white">7 dni, 6 nocy</span>
+              <span className="text-white">{dateRange}</span>
             </div>
             <div className="flex items-center bg-white/20 backdrop-blur-md rounded-full px-4 py-2">
               <MapPin className="w-5 h-5 text-white mr-2" />
-              <span className="text-white">Paryż, Francja</span>
+              <span className="text-white">
+                {wycieczka.data.trips[0].location}
+              </span>
             </div>
           </motion.div>
 

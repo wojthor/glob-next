@@ -48,26 +48,26 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/pielgrzymki"
+                  href="/dla-szkol"
                   className="hover:text-gray-300 transition-colors"
                 >
-                  Pielgrzymki
+                  Dla szkół
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/kolonie"
+                  href="/kolonie-i-obozy"
                   className="hover:text-gray-300 transition-colors"
                 >
-                  Kolonie
+                  Kolonie i obozy
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/wczasy"
+                  href="/dla-zakladow-pracy"
                   className="hover:text-gray-300 transition-colors"
                 >
-                  Wczasy
+                  Dla zakładów pracy
                 </Link>
               </li>
             </ul>

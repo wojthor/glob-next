@@ -1,4 +1,4 @@
-const grapqgl = process.env.NEXT_HYGRAPH_ENDPOINT;
+const grapqgl = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT;
 
 export type Trip2 = {
   data: {
@@ -13,6 +13,7 @@ export type Trip2 = {
       image: { url: string };
       services: string;
       extras: string;
+      location: string;
     }[];
   };
 };
@@ -42,7 +43,8 @@ export async function getPages(): Promise<Trip2> {
           image {
             url
           }
-          services 
+          services
+          location
         }
       }`,
     }),
@@ -78,6 +80,7 @@ export async function getTripByID(tripID: string): Promise<Trip2> {
     }
     services
     extras
+    location
   }
 }`,
     }),
@@ -115,6 +118,50 @@ export async function getTripByCategory(category: string): Promise<Trip2> {
     endDate
     startDate
     description
+    location
+  }
+}`,
+    }),
+  });
+
+  const data: Trip2 = (await response.json()) as Trip2;
+  console.log(data);
+
+  return data;
+}
+
+export async function SearchTrips({
+  query,
+}: {
+  query: string;
+}): Promise<Trip2> {
+  if (!grapqgl) {
+    throw new Error("NEXT_HYGRAPH_ENDPOINT is not defined");
+  }
+
+  const response = await fetch(grapqgl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+    next: { revalidate: 10 },
+    body: JSON.stringify({
+      query: `query D {
+  trips(where: {_search: "${query}"}) {
+    price
+    tripName
+    id
+    category
+    image{
+      url
+    }
+    services
+    extras
+    endDate
+    startDate
+    description
+    location
   }
 }`,
     }),

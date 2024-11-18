@@ -37,10 +37,6 @@ const menuItems: menuItems[] = [
     name: "Kontakt",
     href: "/kontakt",
   },
-  {
-    name: "Dokumenty",
-    href: "/dokumenty",
-  },
 ];
 
 export function HamburgerMenu() {
